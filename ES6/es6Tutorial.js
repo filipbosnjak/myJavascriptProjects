@@ -169,3 +169,42 @@ var employee = new Employee('Filip' , 23, 'SomeCoolCompany');
 console.log(employee);
 employee.sayName();
 
+
+/* -- CALLBACKS & PROMISES -- */
+//Callback is a function to be executed after another one finished executing simply put
+//We used callbacks when we want to wait for certain operation to finish
+//Function that is passed as a parameter is called a callback function
+
+console.log('start');
+
+function getData(data , callback){
+    console.log('fetching data...');
+    setTimeout( () => {
+        callback({
+            data:data
+        });
+    },2000);
+}
+
+getData(5, function(data) {
+    console.log(data);
+});
+
+console.log('finish'); //This will execute before getData() cause it is async
+
+//In ES6 we have Promises - Operations that will finish in the future
+
+const promise = new Promise( (resolve,reject) => {
+    //Code here is async
+    console.log('fetching data again...');
+    setTimeout( () => {
+        //resolve(123);
+        reject(new Error('Sth went wrong...'));
+    },2000);
+});
+
+promise.then( (data) => { //Here data can be used after it is fetched
+    console.log(data);
+}).catch( (err) => {
+    console.log(err);
+})
