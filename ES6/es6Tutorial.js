@@ -64,13 +64,60 @@ sayName(name1);
 // -> We can use this keyword in an nested functions. Usually it is lost after another function is defined in a function
 //    that is defined in an object. We solved it by assigning this to that... Ugly. But not with arrow functions
 
-const button = document.getElementById('button')
-button.addEventListener('click' , () => {
+const button = document.getElementById('button');
+button.addEventListener('click' , function(){ //Doesnt work with arrow function - it has to be declared
     /*
     ...someCode...
     this.classlist.add(...)
     */
-    const anotherFunction = (parameter) => {
+   
+    const buttonDisappear = () => {
         //We can use this keyword to refrence button object here
+        this.classList.add('clicked');
     }
+    buttonDisappear();
 })
+
+/* -- DEFAULT PARAMETERS -- */
+
+//Old way
+/*
+function add(a,b){
+    var x = a || 1; //Meaning: if a is unassigned assign 1 to it. Useful for avoiding errors
+    var y = b || 1;
+}*/
+
+//New way
+const add = (x = 1,y = 1) => {
+    return x + y; 
+}
+
+/* -- ARRAY FUNCTIONS -- */
+
+//Foreach
+
+const array = [1,2,3,4,5,6];
+
+array.forEach( (i) => { // i - variable with which we iterate trough the foreach loop
+    console.log(i);
+})
+
+//console.log(i) -> error... i is not defined
+
+//Map
+//Of a given array make modified copy. Modifies every element and returns it as new array!
+
+const newArray = [1,2,3,1,2,3,1,2,3];
+
+const newArray1 = newArray.map( (i) => {
+    return i*2;
+});
+console.log(newArray1);
+
+//Filter
+//Exactly what the name says -> Filtering array
+
+const newArray2  = newArray.filter( (i) => {
+    return i !== 1; //Removes all the ones from the array
+})
+console.log(newArray2);

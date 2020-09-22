@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body{
+    position: relative;
+}
+.button{
+    position: absolute;
+    left: 45%;
+    top: 50vh;
+    width: 200px;
+    height: 100px;
+    background-color: aqua;
+    color:blue;
+    font-size: 20px;
+    border-radius: 25px;
+    border: none;
+    transition: .4s linear;
+    outline: none;
+}
+.button:hover{
+    width: 207px;
+    height: 107px;
+}
+.clicked{
+    opacity: 0;
+}
