@@ -121,3 +121,51 @@ const newArray2  = newArray.filter( (i) => {
     return i !== 1; //Removes all the ones from the array
 })
 console.log(newArray2);
+
+/* -- CONSTRUCTORS & CLASSES -- */
+
+//Old way
+/*
+function Person(name,age){
+    this.name = name;
+    this.age = age;
+
+    this.sayName = function(){
+        console.log(this.name);
+    }
+}
+*/
+//var Filip = new Person('Filip' , 23);
+//console.log(Filip);
+//Filip.sayName();
+
+//ES6 ->>
+
+class Person{
+    constructor(name,age){
+        this.name = name;
+        this.age = age;
+    }
+    sayName(){
+        console.log(`My name is ${this.name}`);
+    }
+}
+
+var Filip = new Person('Filip' , 23);
+console.log(Filip);
+Filip.sayName();
+//...Much better...
+
+//Inheritance... Careful with that..
+
+class Employee extends Person{
+     constructor(name,age,company){
+         super(name,age);
+         this.company = company;
+     }
+}
+
+var employee = new Employee('Filip' , 23, 'SomeCoolCompany');
+console.log(employee);
+employee.sayName();
+
