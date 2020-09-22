@@ -2,13 +2,13 @@
 
 var counter = 5;
 
-function sayName(){
+function sayName1(){
     var name = "Ed";
     let sth  = 34
     console.log(name);
 }
 
-sayName();
+sayName1();
 
 //console.log(name);
 //Doesn't do anything because variable 'name' is declared locally
@@ -48,3 +48,29 @@ const list = {
 
 const {name,items} = list; //Now ve can use name and items as separate consts
 //console.log(items);
+
+/* -- ARROW FUNCTIONS -- */
+
+let name1 = 'Filip';
+
+//Normal function
+//function sayName(name){
+//    alert(name);
+//}
+//-> Arrow function
+const sayName = (name) => alert(name);
+sayName(name1);
+
+// -> We can use this keyword in an nested functions. Usually it is lost after another function is defined in a function
+//    that is defined in an object. We solved it by assigning this to that... Ugly. But not with arrow functions
+
+const button = document.getElementById('button')
+button.addEventListener('click' , () => {
+    /*
+    ...someCode...
+    this.classlist.add(...)
+    */
+    const anotherFunction = (parameter) => {
+        //We can use this keyword to refrence button object here
+    }
+})
