@@ -2,6 +2,14 @@
     margin: 0;
     padding: 0;
 }
+body{
+    position: relative;
+}
+.content{
+    position: absolute;
+    left: 42%;
+    top:30vh;
+}
 h1{
     margin:20px;
     padding: 10px;
@@ -12,7 +20,7 @@ h1{
     width: 100px;
     height: 50px;
     position: relative;
-    left: 50px;
+    left: 62px;
     border-radius: 10px;
     outline: none;
     border: 0px;
