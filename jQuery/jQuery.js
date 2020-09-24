@@ -46,8 +46,21 @@ $('.btn1').on('mouseenter' , () => {
 $('.btn1').on('mouseleave' , () => {
     $('.btn1').css('background-color','white');
 });
+$('.btn2').click( (e) => {
+    console.log(e);
+    $('.btn1').append(e.currentTarget.innerHTML);
+    $('.btn1').append(e.currentTarget.outerHTML);  //Gives out whole html element with tags
+    $('.btn1').html(e.currentTarget.outerHTML);   // .append() adds it to the end - .html REPLACES IT.
+});
+
+//Sth cool - Updating mouse coords live on a page
+
+$(document).on('mousemove' , (e) => {
+    $('.h11').html('Coords: X: ' + e.clientX + 'Y: ' + e.clientY);
+})
 
 // We can add js string into html
+
 var name = 'Filip Bošnjak';
 
 $('.h11').append(`${name}`);
