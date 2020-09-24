@@ -47,6 +47,17 @@ $('.btn1').on('mouseleave' , () => {
     $('.btn1').css('background-color','white');
 });
 
+// We can add js string into html
+var name = 'Filip Bošnjak';
+
+$('.h11').append(`${name}`);
+
+$('body').append('<h2 class="h2"></h2>');
+
+var someString = 'Sth bla';
+
+$('.h2').append(`${someString}`);
+
 });
 
 
