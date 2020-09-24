@@ -77,7 +77,33 @@ $('.h2').append(`${someString}`);
 
 $('.btn1').click( () => {
     $('.h11').toggleClass('class1');// Add/remove
+});
+
+// .detach() Removes element from the DOM
+
+// --> Getting data from the input
+
+$('#inpt2').keyup( (e) => {
+    var code = e.which; //Gets the keycode of the pressed key
+    if(code == 13){ //If enter pressed
+        e.preventDefault();
+        alert(e.target.value);
+    }
+});
+
+/* -- ARRAY METHODS */
+
+var array = [1,2,3,4,5];
+
+$.each(array , (i, item) => {
+    $('ul').append('<li>' + item + '</li>');
+    console.log(i);
 })
+
+var newArray = $('ul.list li').toArray(); //Turning html list into js array
+console.log(newArray);
+console.log(newArray[0].innerHTML);
+
 });
 
 
