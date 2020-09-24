@@ -70,6 +70,14 @@ var someString = 'Sth bla';
 
 $('.h2').append(`${someString}`);
 
+/* -- DOM MANIPULATION */
+
+// -> .addClass('className'); Adds a css class to the element
+// -> .removeClass('className'); Adds a css class to the element
+
+$('.btn1').click( () => {
+    $('.h11').toggleClass('class1');// Add/remove
+})
 });
 
 
