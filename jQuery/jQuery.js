@@ -1,17 +1,16 @@
-//jQuery - Small, fast and feature-rich Javascript library
-//       - Makes DOM (document object model) manipulation, event handling and Ajax much easier
-
-// $ - Dollar sign - Represents jQuery
-
-// $('elementName').method();
+//  jQuery - Small, fast and feature-rich Javascript library
+//         - Makes DOM (document object model) manipulation, event handling and Ajax much easier
+//         - $ - Dollar sign - Represents jQuery
+//         - $('elementName').method(); -> Basic syntax
 
 
 
 //$('button').hide(); -> Hide button, its still in the html 
-
 //$('button#btnID')... if we had a button with the id="btnID" 
 
 $(document).ready( () => { //All our jQuery should be inside ready() function meaning all code executes when the page is loaded 
+
+
 /* -- MANIPULATING LISTS -- */
 
 $('ul').append('<li>New Item</li>'); //Adding new html element defined as a string
@@ -53,7 +52,7 @@ $('.btn2').click( (e) => {
     $('.btn1').html(e.currentTarget.outerHTML);   // .append() adds it to the end - .html REPLACES IT.
 });
 
-//Sth cool - Updating mouse coords live on a page
+//Something cool - Updating mouse coords live on a page as we move the mouse
 
 $(document).on('mousemove' , (e) => {
     $('.h11').html('Coords: X: ' + e.clientX + 'Y: ' + e.clientY);
