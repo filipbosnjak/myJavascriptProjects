@@ -10,7 +10,9 @@
 //  -> Encapsulation with private and protected variables
 //  -> Inheritance
 
-//  Compile ts -> js | tsc types.ts | Npm installation 
-//  Js file is what we include in our project
+//  Compile ts -> js | tsc types.ts | Npm installation | Live compilation on save tsc types.ts -w (w for watch)
+//  Js file is what we include in our project | Always close js file while working on ts file
 
-console.log('Hello World');
+let mystring: String = 'Hello World';
+ 
+console.log(mystring);
