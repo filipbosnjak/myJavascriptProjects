@@ -47,10 +47,71 @@ console.log(tuple);
 
 /* -- FUNCTIONS -- */
 
-let tsFunction = (n1:number , n2:number) => {
+let tsFunction = (n1:number , n2:number):number =>  {
     return n1 + n2;
 }
 
 //Function defined like this cant take anything other than number type variables
+//Also: all it can return is a number - NOTHING ELSE
 console.log(tsFunction(2,2));
 
+/* -- VARIABLE CASTING -- */
+
+let str: string = '4';
+let num: Number = parseInt(str);
+
+let num1: number = 5;
+let str2: string = String(num1);
+console.log(str2);
+
+
+/* -- CLASSES -- */
+
+class User {
+    name:string;
+    email:string;
+    protected age:number; //We can use protected variable inside of a class and in any subclasses
+
+    constructor(name:string,email:string,age:number){
+        this.name = name;
+        this.email = email;
+        this.age = age;
+
+        console.log('User created: ' + this.name);
+    }
+}
+class User1 extends User{
+    name1:string;
+    
+    constructor(name1:string,name:string,email:string,age:number){
+        super(name,email,age);
+        this.name1 = name1;
+        //let con:number = super.age; //We can use age here cause its just protected. It it were private we wouldnt be able to
+        //console.log(con);
+    }
+}
+
+let newUser = new User('Filip' , 'filip@gmail.com' , 23)
+//console.log(newUser.age); We cant acces private and protected classes outside of a class
+
+/* -- GENERICS -- */
+
+const last = (array:Array<string>) => {
+    return array[array.length -1];
+}
+
+let array:Array<string> = ['1','2','3'];
+
+//console.log(last(array)); 
+
+//Problem is this function works just for strings. What if we wanted numbers? 
+
+const newLast = <T>(arr:Array<T>) => {
+    return arr[arr.length-1];
+}
+
+let newArr:Array<number> = [1,2,3];
+console.log(newLast(newArr));
+console.log(newLast(array));
+//T stands for generic type. Instead of T we could put anything. T is just common one
+//Like this we dont use type definiton
