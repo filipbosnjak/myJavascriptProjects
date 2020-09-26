@@ -1,6 +1,7 @@
 //                          TYPESCRIPT
 
-//  Its a superset of javascript. Any valid javascript is valid typescript. Developed by Microsoft.
+//  Its a superset of javascript. Any valid javascript is valid typescript.
+//  TypeScript extend JavaScript with new features. Developed by Microsoft.
 
 //  What Typescript offers us?
 //  -> Static Type Checking - we re required to specify our types - like in for eg. Java or C - makes code more readable and descriptive
@@ -110,8 +111,12 @@ const newLast = <T>(arr:Array<T>) => {
     return arr[arr.length-1];
 }
 
+//T stands for generic type. It says to a function to expect generic type passed.
+//Instead of T we could put anything. T is just common one
+//Like this we dont use type definiton
+
 let newArr:Array<number> = [1,2,3];
+
 console.log(newLast(newArr));
 console.log(newLast(array));
-//T stands for generic type. Instead of T we could put anything. T is just common one
-//Like this we dont use type definiton
+
