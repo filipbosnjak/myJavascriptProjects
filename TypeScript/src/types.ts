@@ -43,6 +43,11 @@ let numArr: Array<Number> = [1,2,3];
 
 console.log(numArr);
 
+//We can initialize empty array like this
+let initArray: Array<string> = [];
+initArray.push('Filip');
+console.log(initArray);
+
 
 /* -- TUPLES -- */
 //Array with defined number and type of elements

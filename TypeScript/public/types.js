@@ -41,6 +41,10 @@ var string4 = ['String1', 'String2', 'String3'];
 console.log(string4[1]);
 var numArr = [1, 2, 3];
 console.log(numArr);
+//We can initialize empty array like this
+var initArray = [];
+initArray.push('Filip');
+console.log(initArray);
 /* -- TUPLES -- */
 //Array with defined number and type of elements
 var tuple = ['Filip', 4];
