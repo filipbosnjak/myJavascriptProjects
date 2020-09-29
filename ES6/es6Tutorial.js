@@ -40,6 +40,7 @@ function showBook(title,author){
 //console.log(newBook);
 
 /* -- OBJECT DESTRUCTURING -- */
+//Extraction of desired elements of an object into a single variable.
 
 const list = {
     name: 'Shop list',
@@ -48,6 +49,8 @@ const list = {
 
 const {name,items} = list; //Now ve can use name and items as separate consts
 //console.log(items);
+
+
 
 /* -- ARROW FUNCTIONS -- */
 
@@ -253,3 +256,34 @@ const prod = (arr) => {
     })
 }
 console.log(prod(newArr1));
+
+/* -- OBJECT DUPPLICATION, REFERENCING AND PRIMITIVE TYPES -- */
+
+//Lets say we have an object:
+let Person1 = {
+    name:'Filip'
+};
+
+console.log(Person1);
+
+//We can try to copy Person object like this:
+
+let Person2 = Person1;
+console.log(Person2);
+
+//But now when we change Person 2 we also change Person 1
+//That is because Person1 holds an adress in memory of that object not the object itself
+
+/*
+Person2.name = 'Karla';
+console.log(Person1); -> This outputs obj with name:'Karla'
+*/
+//We can maka a copy with a spread operator for eg.
+
+Person2 = {
+    ...Person1  //Like this we make legitimate copy of an object
+}
+Person2.name = 'Karla';
+
+console.log(Person1); // -> This outputs obj with name of 'Filip'
+
