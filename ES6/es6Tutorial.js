@@ -208,3 +208,33 @@ promise.then( (data) => { //Here data can be used after it is fetched
 }).catch( (err) => {
     console.log(err);
 })
+
+console.clear();
+
+/* --  SPREAD AND REST OPERATORS -- */
+
+//SPREAD
+let arr3 = [1,2,3];
+let arr4 = [...arr3,4,5,6]; // With SPREAD operator (...) -> ...arr3 we extract out all elements and copy them in our new array. 
+console.log(arr3 , arr4);   // Then we can add new elements.
+
+//If we did it like this:
+let arr5 = [arr3,4,5,6]; 
+//We would get array inside of an array i.e. nested array
+console.log(arr5);
+
+//REST
+//REST operator allows us to take undefined number of arguments that we pass to a function, represent them as an array inside a function and use them that way.
+
+const sum = (...arguments) => {
+    console.log(arguments)
+    /*let sum = 0;
+    arguments.forEach( (i,sum) => {
+        //console.log(i-1);
+        sum = sum + arguments[i-1];
+        console.log(sum); // oesnt work cause arrow function makes a local copy of a sum and works with it leaving original sum that is returned untouched 
+    })
+    return sum;*/
+}
+//let sum1 = sum(1,2,3);
+sum(1,2,3,4);
