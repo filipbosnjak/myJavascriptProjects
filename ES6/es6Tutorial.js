@@ -238,3 +238,18 @@ const sum = (...arguments) => {
 }
 //let sum1 = sum(1,2,3);
 sum(1,2,3,4);
+
+/* -- .reduce() array method -- */
+//.reduce() method executes provided function on every element of an array array and returnin  a single value
+
+let newArr1 = [1,2,3,4];
+ let sum1 = newArr1.reduce( (sum = 0 , curr ) => { //Simple sum of an array
+     return sum + curr;//Sum value is remembered trough each iteration of the loop and can be returned out.
+ } )
+console.log(sum1);
+const prod = (arr) => {
+    return arr.reduce( (sum = 1 , curr) => {
+        return sum*curr;
+    })
+}
+console.log(prod(newArr1));
