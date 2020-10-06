@@ -32,4 +32,6 @@ console.clear();
 //The entries() method returns a new Array Iterator object that contains the key/value pairs for
 //each index in the array.
 
-console.log(array);
+const iterator = array.entries() //Returns IterableIterator<[number, number]>
+ 
+for(e i)
