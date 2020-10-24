@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500;1,600&display=swap");
+* { margin: 0; padding: 0; -webkit-box-sizing: border-box; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
+
+nav { background-color: gainsboro; width: 100%; height: 10vh; text-align: center; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; font-size: 22px; }
+
+nav h1 { font-weight: 400; }
+
+.content { width: 60%; margin: 0 auto; font-size: 18px; border: 1px solid gray; padding: 30px; border-radius: 10px; margin-top: 10px; }
+
+.content form { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: start; -ms-flex-pack: start; justify-content: start; -ms-flex-wrap: wrap; flex-wrap: wrap; }
+
+.content form p { width: 100%; margin: 10px 0; }
+
+.content form .btn { margin: 0 5px; width: 70px; background-color: #645d5d; color: white; border-radius: 5px; border: none; height: 20px; }
+
+.content ul { margin-top: 10px; }
+
+.content ul li { width: 100%; position: relative; background-color: #b1afaf; margin: 2px; height: 30px; border-radius: 3px; list-style: none; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; padding-left: 5px; -webkit-transition: .2s ease-in-out; transition: .2s ease-in-out; }
+
+.content ul li:hover { -webkit-transform: scale(1.02); transform: scale(1.02); }
+
+.content ul li .itembtn { position: absolute; right: 2px; width: 20px; border-radius: 5px; outline: none; border: none; background-color: red; }
+
+.content ul .black { background-color: black; }
+
+.panel { width: 100%; height: 15vh; background-color: blanchedalmond; }
+/*# sourceMappingURL=style.css.map */
