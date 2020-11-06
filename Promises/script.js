@@ -108,7 +108,7 @@ const getPosts = () => {
             output += `<li>${post.title}</li>`
         })
         let body = document.querySelector('body')
-        body.innerHTML = output
+        //body.innerHTML = output
     } , 500)
     
 }
@@ -129,3 +129,52 @@ const list = createPost(newPost , getPosts) //getposts finishes before createPos
 //after the first function is over
 
 // ------------------------ ASYNC , AWAIT ------------------------ \\
+//Syntactical sugar that makes promises more elegant
+
+const makeRequest = (location) => {
+    return new Promise( (resolve , reject) => {
+        console.log(`Making request to ${location}`)
+        if(location === 'Google'){
+            resolve('Google responded')
+        }else{
+            reject('Can only resolve Google')
+        }
+    })
+}
+
+const processRequest = (response) => {
+    return new Promise((resolve , reject) => {
+        console.log('Processing response')
+        resolve(`Response: ${response}`)
+    })
+}
+
+
+//async function doWork(){}
+const doWork = async (msg) => {
+    try{
+        const response = await makeRequest(msg)
+        console.log('Response Received')
+        const processed = await processRequest(response)
+        console.log(processed)
+    }catch(err){
+        console.log(err)
+    }
+    
+}
+let input = document.querySelector('input')
+let log = document.querySelector('p')
+let button = document.querySelector('button')
+
+button.addEventListener('click' , (e)=>{
+    e.preventDefault()
+    //console.log(input.value)
+    //log.innerText = input.value
+
+    // makeRequest(input.value)
+    // .then(msg => processRequest(msg))
+    // .then(res => console.log(res))
+    // .catch(msg => console.log(msg))
+
+    doWork(input.value)
+})
